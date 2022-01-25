@@ -21,6 +21,7 @@ export default function index() {
     setCount(0);
     console.log(count);
   };
+  const e = React.createElement;
   return (
     <>
       <div>
@@ -29,6 +30,7 @@ export default function index() {
         <button onClick={startCounter}>start</button>
         <button onClick={stopCounter}>Pause</button>
         <button onClick={resetCounter}>Reset</button>
+        {e("div", null, "Hello World")}
       </div>
     </>
   );

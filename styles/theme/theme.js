@@ -14,6 +14,8 @@ export const Theme = {
     txtCol: "#393939",
     lightFadeCol: "#CFCFCF",
     faintCol: "#A0A0A0",
+    lightBoxShadow: "0px 1px 4px rgba(174, 174, 174, 0.25)",
+    blueFadeBxShdw: "4px 4px 4px rgba(133, 116, 235, 0.25)",
   },
   darkTheme: {
     backgroundCol: "#000000",

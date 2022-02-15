@@ -8,6 +8,7 @@ export const Theme = {
     inactiveCol: "#BEBEBE",
     darkBgCol: "#454545",
     lightBgCol: "#EEEEEE",
+    lightInpCol: " #FDFDFD",
     lightBgGradient:
       "linear-gradient(180deg, rgba(196, 196, 196, 0.1624) 19.39%, rgba(196, 196, 196, 0) 100%)",
     bgGradient: "linear-gradient(180deg, #FBFBFB 0%, #EEEEEE 100%)",

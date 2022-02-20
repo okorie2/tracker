@@ -24,6 +24,7 @@ export const SignupContainer = styled.div`
     // background-color: yellow;
     text-align: center;
     font-family: "Nunito", sans-serif;
+
     h1 {
       margin-top: 4%;
       font-size: 64px;
@@ -36,7 +37,7 @@ export const SignupContainer = styled.div`
 
     input {
       outline: none;
-      width: 60%;
+      width: 70%;
       padding: 4%;
       border-radius: 15px;
       background: ${({ theme }) => theme.lightInpCol};
@@ -50,19 +51,42 @@ export const SignupContainer = styled.div`
       display: -ms-flexbox;
       display: flex;
       -webkit-flex-direction: row;
-      width: 47%;
+      width: 67%;
+      // background-color: green;
+
       margin: auto;
       -ms-flex-direction: row;
+      justify-content: space-between;
       flex-direction: row;
       p {
         font-size: small;
       }
+      .btn {
+        flex-grow: 0.5;
+        font-size: larger;
+      }
     }
+
     .rw div {
       margin-right: 2%;
       align-items: center;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+    }
+    .wrap {
+      width: 60%;
+      display: flex;
+      margin: auto;
+      // background-color: green;
+      flex-wrap: wrap;
+      margin-top: 3%;
+      justify-content: space-evenly;
+      .border {
+        // background-color: ${({ theme }) => theme.lightInpCol};
+        width: 30%;
+        height: 1px;
+        border: 1px solid ${({ theme }) => theme.lightInpCol};
+      }
     }
   }
 `;

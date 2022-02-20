@@ -14,33 +14,35 @@ export default function signup() {
         </div>
 
         <div className="right">
-          <h1>SIGN UP</h1>
-          <p>Sign up and start tracking today</p>
-          <div>
-            <input type="search" placeholder="Name" />
-          </div>
-          <div>
-            <input type="search" placeholder="Email Address" />
-          </div>
-          <div>
-            <input type="search" placeholder="Password" />
-          </div>
-          <div className="rw">
+          <div className="form-container">
+            <h1>SIGN UP</h1>
+            <p>Sign up and start tracking today</p>
             <div>
-              <ButtonHighlight padding="1em 4em"> Sign Up</ButtonHighlight>
+              <input type="search" placeholder="Name" />
             </div>
             <div>
-              <p>Have an account?</p>{" "}
+              <input type="search" placeholder="Email Address" />
             </div>
-            <div>Sign In</div>
-          </div>
-          <div>
-            <div>border</div>
-            <div>Sign Up with</div>
-            <div>border</div>
-            <div>Google</div>
-            <div>Apple</div>
-            <div>Fb</div>
+            <div>
+              <input type="search" placeholder="Password" />
+            </div>
+            <div className="rw">
+              <div className="btn">
+                <ButtonHighlight padding="1.5em 4em"> Sign Up</ButtonHighlight>
+              </div>
+              <div>
+                <p>Have an account?</p>{" "}
+              </div>
+              <div>Sign In</div>
+            </div>
+            <div className="wrap">
+              <div className="border"></div>
+              <div>Sign Up with</div>
+              <div className="border"></div>
+              <div>Google</div>
+              <div>Apple</div>
+              <div>Fb</div>
+            </div>
           </div>
         </div>
       </SignupContainer>

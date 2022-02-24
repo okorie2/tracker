@@ -48,6 +48,10 @@ export const Homestyle = {
       width: 70%;
       // line-height: 10px;
     }
+    @media only screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
   `,
   Stat: styled.div`
     display: grid;

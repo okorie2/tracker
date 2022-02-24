@@ -50,8 +50,29 @@ export const Homestyle = {
     }
     @media only screen and (max-width: 600px) {
       display: flex;
+<<<<<<< HEAD
       flex-direction: column;
     }
+=======
+      flex-direction:column;
+      align-items: center;
+      width: 90%;
+
+      button {
+        font-size: 18px;
+        width: 100%;
+      }
+
+      .pdiv {
+        width: 90%;
+       line-height: 30px;
+    }
+    div:nth-child(1) {
+      width: 80%;
+    }
+    
+  }
+>>>>>>> 29f94271579d6c1227db18f6b423824ede54278d
   `,
   Stat: styled.div`
     display: grid;
@@ -85,6 +106,44 @@ export const Homestyle = {
 
       border: 0.1px solid ${({ theme }) => theme.faintCol};
     }
+  
+
+    @media only screen and (max-width: 600px) {
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      .flex{
+        margin-left:0;
+        justify-content: space-evenly;
+      }
+      
+      .rule{
+        width: 0.1px;
+        background-color:#aeb2b8;
+      }
+
+      div:nth-child(1) {
+        flex-grow: 0.1;
+        align-self: center;
+     }
+
+      div:nth-child(2) {
+        flex-grow: 0.1;
+        align-self: center;
+        margin-right: 2px;
+     }
+
+     div:nth-child(3) {
+        flex-grow: 0.1;
+        align-self: center;
+     }
+
+
+      p{
+          display: inline;
+          margin-left: 2px;
+      }
   `,
   Comment: styled.div`
     background: ${({ theme }) => theme.lightBgGradient};
@@ -105,6 +164,30 @@ export const Homestyle = {
         margin: auto;
       }
     }
+
+    @media only screen and (max-width: 600px) {
+
+      .top{
+        text-align: center;
+        display: inline;
+      }
+
+      h2 {
+      
+        width: 100%;
+        margin: auto;
+        display: inline;
+        font-size: 108.8%;
+        position: relative;
+        left: 5%;
+
+      }
+
+      border-top: 2px soild #aeb2b8;
+
+
+    } 
+
   `,
   FormContainer: styled.div`
     color: ${({ theme }) => theme.txtCol};
@@ -164,6 +247,48 @@ export const Homestyle = {
         padding: 6.5%;
       }
     }
+
+    @media only screen and (max-width: 600px) {
+      display:flex;
+      flex-direction: column;
+
+      .text {
+        display: grid;
+        width: inherit;
+        grid-template-columns: 50% 50%;
+        // flex-grow: 0.5;
+        h2 {
+          font-size: 30px;
+          position: relative;
+          left: -2%;
+        }
+        p {
+          width: 80%;
+          margin-left: 13%;
+          font-weight: normal;
+        }
+      }
+    
+      .form {
+        width: 100%;
+        padding: 3% 0%;
+  
+        // flex-grow: 0.5;
+        div {
+          margin-bottom: 2.5%;
+          margin-right: 1%;
+        }
+        input {
+          border: 2px solid ${({ theme }) => theme.lightFadeCol};
+          border-radius: 10px;
+          width: ${(props) => (props.width ? props.width : "100%")};
+          padding: 3.5%;
+          font-weight: 550;
+          font-size: 18px;
+        }
+      }
+
+    }
   `,
   Footer: styled.div`
     background-color: ${({ theme }) => theme.darkBgCol};
@@ -184,6 +309,25 @@ export const Homestyle = {
       display: flex;
       justify-content: space-between;
     }
+
+    @media only screen and (max-width: 600px) {
+      div:nth-child(4) {
+        align-self: center;
+        position: relative;
+        margin: 
+      }
+      .grid {
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
+      }
+
+      p{
+        margin: 10%;
+      }
+
+    }  
   `,
 };
 
@@ -204,5 +348,22 @@ export const Mid = styled(Homestyle.Nav)`
     align-items: center;
     font-size: 24px;
     font-weight: 550;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      width: 90%;
+      font-size: 30px;
+    }
+
+    .tick-grid {
+      width: 90%;
+      font-size: 18px;
+      font-weight: 520;
+    }
+
   }
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Homestyle = {
   Topnav: styled.div`
-    height: 64px;
+    width: 100%;
     background-color: ${({ theme }) => theme.lightBgCol};
     padding: 1%;
     .img {
@@ -25,9 +25,12 @@ export const Homestyle = {
 
     display: grid;
     grid-template-columns: 60% 40%;
+    // display: flex;
+
     width: 90%;
     margin: auto;
     margin-top: 5%;
+    // background-color: pink;
 
     h1 {
       font-size: 40px;
@@ -50,9 +53,10 @@ export const Homestyle = {
     }
     @media only screen and (max-width: 600px) {
       display: flex;
-      flex-direction:column;
+      flex-direction: column;
       align-items: center;
-      width: 90%;
+      width: 80%;
+      // background-color: yellow;
 
       button {
         font-size: 18px;
@@ -61,7 +65,11 @@ export const Homestyle = {
 
       .pdiv {
         width: 90%;
-       line-height: 30px;
+        line-height: 30px;
+      }
+      div:nth-child(1) {
+        width: 80%;
+      }
     }
     div:nth-child(1) {
       width: 80%;
@@ -122,44 +130,47 @@ export const Homestyle = {
 
       border: 0.1px solid ${({ theme }) => theme.faintCol};
     }
-  
 
     @media only screen and (max-width: 600px) {
       display: flex;
       width: 100%;
       align-items: center;
 
-      .flex{
-        margin-left:0;
+      .flex {
+        margin-left: 0;
         justify-content: space-evenly;
       }
-      
-      .rule{
+
+      .rule {
         width: 0.1px;
-        background-color:#aeb2b8;
+        background-color: #aeb2b8;
       }
 
       div:nth-child(1) {
         flex-grow: 0.1;
         align-self: center;
-     }
+      }
 
       div:nth-child(2) {
         flex-grow: 0.1;
         align-self: center;
         margin-right: 2px;
-     }
+      }
 
-     div:nth-child(3) {
+      div:nth-child(3) {
         flex-grow: 0.1;
         align-self: center;
-     }
-
-
-      p{
-          display: inline;
-          margin-left: 2px;
       }
+
+      p {
+        display: inline;
+        margin-left: 2px;
+      }
+    }
+    @media only screen and (min-width: 600px) {
+      @media only screen and (max-width: 990px) {
+      }
+    }
   `,
   Comment: styled.div`
     background: ${({ theme }) => theme.lightBgGradient};
@@ -182,21 +193,18 @@ export const Homestyle = {
     }
 
     @media only screen and (max-width: 600px) {
-
-      .top{
+      .top {
         text-align: center;
         display: inline;
       }
 
       h2 {
-      
         width: 100%;
         margin: auto;
         display: inline;
         font-size: 108.8%;
         position: relative;
         left: 5%;
-
       }
 
       border-top: 2px soild #aeb2b8;
@@ -265,7 +273,7 @@ export const Homestyle = {
     }
 
     @media only screen and (max-width: 600px) {
-      display:flex;
+      display: flex;
       flex-direction: column;
 
       .text {
@@ -284,11 +292,11 @@ export const Homestyle = {
           font-weight: normal;
         }
       }
-    
+
       .form {
         width: 100%;
         padding: 3% 0%;
-  
+
         // flex-grow: 0.5;
         div {
           margin-bottom: 2.5%;
@@ -303,7 +311,6 @@ export const Homestyle = {
           font-size: 18px;
         }
       }
-
     }
 
     @media only screen and (min-width: 600px) {
@@ -367,7 +374,7 @@ export const Homestyle = {
       div:nth-child(4) {
         align-self: center;
         position: relative;
-        margin: 
+        margin: ;
       }
       .grid {
         width: 80%;
@@ -376,11 +383,10 @@ export const Homestyle = {
         grid-template-columns: auto auto auto;
       }
 
-      p{
+      p {
         margin: 10%;
       }
-
-    }  
+    }
   `,
 };
 
@@ -417,7 +423,6 @@ export const Mid = styled(Homestyle.Nav)`
       font-size: 18px;
       font-weight: 520;
     }
-
   }
 
   @media only screen and (min-width: 600px) {

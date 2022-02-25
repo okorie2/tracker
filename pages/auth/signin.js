@@ -1,11 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-import {
-  Inp,
-  SignupContainer,
-} from "../../styles/screens/authStyle/signupStyle";
+import { Inp } from "../../styles/screens/authStyle/signupStyle";
 import Ikbal from "../../public/assets/svgs/Ikbal5.svg";
+import Marni from "../../public/assets/svgs/Marni2.svg";
+
 import Google from "../../public/assets/svgs/Google.svg";
 import Facebook from "../../public/assets/svgs/Facebook.svg";
 import Apple from "../../public/assets/svgs/apple.svg";
@@ -13,6 +12,7 @@ import Apple from "../../public/assets/svgs/apple.svg";
 import { ButtonHighlight } from "../../styles/components/Buttons/ButtonHighlightStyle";
 import Head from "next/head";
 import Link from "next/link";
+import { SigninContainer } from "../../styles/screens/authStyle/signinStyle";
 
 export default function signup() {
   return (
@@ -43,23 +43,23 @@ export default function signup() {
         />
       </Head>
 
-      <SignupContainer>
+      <SigninContainer>
         <div className="left">
           {/* <div>hey</div> */}
-          <Image src={Ikbal} alt="Ikbal" width={638} />
+          <Image src={Marni} alt="Marni" width={638} />
         </div>
         <div className="right">
           <div className="form-container">
-            <h1>SIGN UP</h1>
-            <p>Sign up and start tracking today</p>
-            <div>
+            <h1>SIGN IN</h1>
+            <p>Welcome back! You've been missed.</p>
+            {/* <div>
               <Inp
                 type="text"
                 placeholder="Name"
                 rad="15px"
                 imgUrl={"/assets/svgs/user.svg"}
               />
-            </div>
+            </div> */}
             <div>
               <Inp
                 type="text"
@@ -76,16 +76,23 @@ export default function signup() {
                 imgUrl={"/assets/svgs/eye.svg"}
               />
             </div>
+            <div className="forgot">
+              <label>
+                <Link href={"/auth/forgotpassword"}>
+                  <a>Forgot Password?</a>
+                </Link>
+              </label>
+            </div>
             <div className="rw-cont">
               <div className="rw">
                 <div className="btn">
-                  <ButtonHighlight> Sign Up</ButtonHighlight>
+                  <ButtonHighlight> Sign In</ButtonHighlight>
                 </div>
                 <div>
-                  <h4>Have an account? </h4>{" "}
+                  <h4>Don't have an account? </h4>{" "}
                   <span>
-                    <Link href={"/auth/signin"}>
-                      <a> Sign In </a>
+                    <Link href={"/auth/signup"}>
+                      <a> Sign Up </a>
                     </Link>
                   </span>{" "}
                 </div>
@@ -94,7 +101,7 @@ export default function signup() {
             <div className="wrap-cont">
               <div className="wrap">
                 <div className="border"></div>
-                <div>Sign Up with</div>
+                <div>Continue with</div>
                 <div className="border"></div>
               </div>
               <div className="wrap">
@@ -111,7 +118,7 @@ export default function signup() {
             </div>
           </div>
         </div>
-      </SignupContainer>
+      </SigninContainer>
     </>
   );
 }

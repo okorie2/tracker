@@ -58,7 +58,7 @@ export default function Home() {
             rel="stylesheet"
           />
         </Head>
-        <Homestyle.Topnav>
+        {/* <Homestyle.Topnav>
           <div className="img">
             <Image src={Three} alt={"threedots"} width={70} />
           </div>
@@ -79,7 +79,7 @@ export default function Home() {
               </a>
             </Link>
           </div>
-        </Homestyle.Nav>
+        </Homestyle.Nav> */}
         <Homestyle.Intro>
           <div>
             <h1>

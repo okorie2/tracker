@@ -46,6 +46,9 @@ export const SignupContainer = styled.div`
       p {
         font-size: small;
       }
+      h4 {
+        margin-right: 15%;
+      }
       a {
         color: ${({ theme }) => theme.highlightCol};
         font-size: larger;
@@ -57,12 +60,18 @@ export const SignupContainer = styled.div`
           font-weight: 600;
         }
       }
+      div {
+        // margin-right: 4%;
+        display: flex;
+        align-items: center;
+      }
+      div:nth-child(2) {
+        flex-basis: 48%;
+      }
     }
 
-    .rw div {
-      margin-right: 4%;
-      display: flex;
-      align-items: center;
+    .wrap-cont {
+      margin-top: 5%;
     }
     .wrap {
       width: 60%;
@@ -75,7 +84,7 @@ export const SignupContainer = styled.div`
       justify-content: space-between;
       .border {
         // background-color: ${({ theme }) => theme.lightInpCol};
-        width: 126px;
+        width: 107px;
         height: 0px;
         border: 1px solid ${({ theme }) => theme.lightInpCol};
       }
@@ -89,6 +98,57 @@ export const SignupContainer = styled.div`
         width: 20%;
         padding-top: 2%;
       }
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    align-items: center;
+    .left {
+      order: 2;
+      display: none;
+    }
+    .right {
+      h1 {
+        font-size: 56px;
+      }
+      .rw-cont {
+        .rw {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          div,
+          h4 {
+            margin-right: 0;
+            font-size: small;
+          }
+        }
+        .btn {
+          button {
+            width: fit-content;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.55em 4.5em;
+            align-items: center;
+          }
+        }
+      }
+      .wrap-cont {
+        .border {
+          width: 48px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 700px) {
+    @media only screen and (max-width: 990px) {
+      display: flex;
+      // flex-wrap: wrap;
+      height: 100vh;
+      align-items: center;
     }
   }
 `;
@@ -108,4 +168,9 @@ export const Inp = styled.input`
   font-weight: 600;
   border: none;
   margin-bottom: 5%;
+  @media only screen and (max-width: 600px) {
+    width: 78%;
+    font-size: 1em;
+    background-size: 20px;
+  }
 `;

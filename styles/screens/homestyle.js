@@ -71,6 +71,32 @@ export const Homestyle = {
         width: 80%;
       }
     }
+    div:nth-child(1) {
+      width: 80%;
+    }
+    
+  }
+
+  @media only screen and (min-width: 600px) {
+    @media only screen and (max-width: 990px) {
+      display: flex;
+      flex-direction:column;
+      align-items: center;
+      text-align:center;
+      width: 90%;
+
+      div:nth-child(1) {
+        width: 90%;
+      }
+
+      .pdiv {
+        width: 100%;
+       line-height: 30px;
+       align-self: center;
+    }
+    }
+    
+  }
   `,
   Stat: styled.div`
     display: grid;
@@ -182,7 +208,10 @@ export const Homestyle = {
       }
 
       border-top: 2px soild #aeb2b8;
+
+
     }
+
   `,
   FormContainer: styled.div`
     color: ${({ theme }) => theme.txtCol};
@@ -283,6 +312,43 @@ export const Homestyle = {
         }
       }
     }
+
+    @media only screen and (min-width: 600px) {
+      @media only screen and (max-width: 990px) {
+        .text {
+          display: grid;
+          width: 50%;
+          grid-template-columns: 30% 50%;
+          // flex-grow: 0.5;
+          h2 {
+            font-size: 25px;
+            position: relative;
+            left: -2%;
+          }
+          p {
+            width: 70%;
+            margin-left: 29%;
+            font-weight: 200px;
+          }
+        }
+
+        .form {
+          // flex-grow: 0.5;
+          div {
+            margin-bottom: 2.5%;
+            margin-right: 1%;
+          }
+          input {
+            border: 2px solid ${({ theme }) => theme.lightFadeCol};
+            border-radius: 10px;
+            width: ${(props) => (props.width ? props.width : "100%")};
+            padding: 3.5%;
+            font-weight: 550;
+            font-size: 18px;
+          }
+        }
+      }
+    }
   `,
   Footer: styled.div`
     background-color: ${({ theme }) => theme.darkBgCol};
@@ -356,6 +422,19 @@ export const Mid = styled(Homestyle.Nav)`
       width: 90%;
       font-size: 18px;
       font-weight: 520;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    @media only screen and (max-width: 990px) {
+      .tick-grid {
+        font-size: 20px;
+        font-weight: 520;
+      }
+      h2 {
+        width: 90%;
+        font-size: 25px;
+      }
     }
   }
 `;

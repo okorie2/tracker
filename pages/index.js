@@ -7,7 +7,7 @@ import { Theme } from "../styles/theme/theme";
 import { UseTheme } from "../hooks/useTheme";
 import Three from "../public/assets/svgs/threedtots.svg";
 import Logo from "../public/assets/svgs/logo.svg";
-import YtLogo from "../public/assets/svgs/ytlogo.svg";
+import YtLogo from "../public/assets/svgs/tracker.svg";
 import Fb from "../public/assets/svgs/fb.svg";
 import Github from "../public/assets/svgs/github.svg";
 import Twitter from "../public/assets/svgs/twitter.svg";
@@ -23,13 +23,15 @@ import Avi5 from "../public/assets/pngs/avi5.png";
 import Person from "../public/assets/svgs/person.svg";
 import Lock from "../public/assets/svgs/lock.svg";
 import Server from "../public/assets/svgs/server.svg";
-
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
 import { ButtonOutline } from "../styles/components/Buttons/ButtonOutlineStyle";
 import { ButtonHighlight } from "../styles/components/Buttons/ButtonHighlightStyle";
 import { Homestyle, Mid } from "../styles/screens/homestyle";
 import Carousel, { CarouselItem } from "../components/Carousel/Carousel";
 import { CardStyle } from "../styles/components/Cards/SmCardStyle";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
   if (typeof window !== "undefined") {
@@ -38,6 +40,11 @@ export default function Home() {
 
   const { themeLoaded, themeMode, toggleTheme, theme } = UseTheme();
   console.log(themeMode, "current theme");
+
+  const [menu, setMenu] = useState(false);
+  const toggleMenu = () => {
+    setMenu(!menu);
+  };
   return (
     <>
       <>
@@ -58,28 +65,38 @@ export default function Home() {
             rel="stylesheet"
           />
         </Head>
-        {/* <Homestyle.Topnav>
+        <Homestyle.Topnav>
           <div className="img">
             <Image src={Three} alt={"threedots"} width={70} />
           </div>
         </Homestyle.Topnav>
-        <Homestyle.Nav>
-          <div>
-            <Image src={YtLogo} alt={"logo"} width={140} />
+        <Homestyle.Nav
+          display={menu ? "block" : "none"}
+          logo={menu ? "none" : "block"}
+          onClick={toggleMenu}
+        >
+          <div className={menu ? "xpanded navgrid" : "navgrid"}>
+            <div className="logo">
+              <Image src={YtLogo} alt={"logo"} width={140} />
+            </div>
+            <div className={"flex"}>
+              <div className="item">About</div>
+              <div className="item">Terms</div>
+              <div className="item">Features</div>
+              <div className="item">Contact us</div>
+              <div className="item">
+                {" "}
+                <Link href="/auth/signin">
+                  <a>
+                    <ButtonOutline>Sign in</ButtonOutline>{" "}
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="menu">{menu ? <CloseIcon /> : <MenuIcon />}</div>
           </div>
-          <div>About</div>
-          <div>Terms</div>
-          <div>Features</div>
-          <div>Contact us</div>
-          <div>
-            {" "}
-            <Link href="/auth/signin">
-              <a>
-                <ButtonOutline>Sign in</ButtonOutline>{" "}
-              </a>
-            </Link>
-          </div>
-        </Homestyle.Nav> */}
+        </Homestyle.Nav>
+
         <Homestyle.Intro>
           <div>
             <h1>

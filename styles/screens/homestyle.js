@@ -10,15 +10,67 @@ export const Homestyle = {
     }
   `,
   Nav: styled.div`
-    display: grid;
-    grid-template-columns: 63% auto auto auto auto auto;
-    align-items: center;
-    width: 90%;
-    padding-top: 1%;
-    margin: auto;
-    color: ${({ theme }) => theme.txtCol};
-    background-color: ${({ theme }) => theme.white};
-    font-size: 20px;
+    .navgrid {
+      display: grid;
+      grid-template-columns: 61% auto;
+      align-items: center;
+      width: 90%;
+      padding-top: 1%;
+      margin: auto;
+      color: ${({ theme }) => theme.txtCol};
+      background-color: ${({ theme }) => theme.white};
+      font-size: 20px;
+
+      .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .menu {
+        display: none;
+      }
+    }
+    @media only screen and (max-width: 900px) {
+      .navgrid {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        max-height: 50px;
+        transition: max-height 0.2s linear;
+        width: 100%;
+        .logo {
+          display: ${(props) => props.logo};
+        }
+        .flex {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          flex-basis: 100%;
+          padding-top: 3%;
+          max-height: 20%;
+          transition: max-height 0.15s ease-out;
+          display: ${(props) => props.display};
+          .item {
+            padding: 3%;
+            ${(props) => props.display}
+            margin-left: 4%;
+          }
+        }
+        .menu {
+          display: block;
+        }
+      }
+      .xpanded {
+        background-color: ${({ theme }) => theme.highlightCol};
+        max-height: 500px;
+      }
+    }
+
+    @media only screen and (min-width: 700px) {
+      @media only screen and (max-width: 990px) {
+      }
+    }
   `,
   Intro: styled.div`
     color: ${({ theme }) => theme.txtCol};
@@ -208,10 +260,7 @@ export const Homestyle = {
       }
 
       border-top: 2px soild #aeb2b8;
-
-
     }
-
   `,
   FormContainer: styled.div`
     color: ${({ theme }) => theme.txtCol};
@@ -390,10 +439,12 @@ export const Homestyle = {
   `,
 };
 
-export const Mid = styled(Homestyle.Nav)`
+export const Mid = styled.div`
   background: ${({ theme }) => theme.lightBgGradient};
+  display: grid;
   grid-template-columns: 55% 45%;
   width: 85%;
+  margin: auto;
   margin-bottom: 5%;
   font-family: "Nunito", sans-serif;
 

@@ -56,6 +56,9 @@ export const Homestyle = {
             ${(props) => props.display}
             margin-left: 4%;
           }
+          .btn {
+            margin-left: 6.5%;
+          }
         }
         .menu {
           display: block;
@@ -109,7 +112,9 @@ export const Homestyle = {
       align-items: center;
       width: 80%;
       // background-color: yellow;
-
+h1{
+  font-size:35px;
+}
       button {
         font-size: 18px;
         width: 100%;
@@ -185,33 +190,26 @@ export const Homestyle = {
 
     @media only screen and (max-width: 600px) {
       display: flex;
-      width: 100%;
+      flex-direction: column;
+      width: 80%;
       align-items: center;
+      justify-content: center;
+      margin-bottom: 5%;
 
       .flex {
         margin-left: 0;
-        justify-content: space-evenly;
+        justify-content: center;
+        width: 62%;
+        align-items: center;
+        div {
+          padding-top: 10%;
+        }
       }
 
       .rule {
         width: 0.1px;
         background-color: #aeb2b8;
-      }
-
-      div:nth-child(1) {
-        flex-grow: 0.1;
-        align-self: center;
-      }
-
-      div:nth-child(2) {
-        flex-grow: 0.1;
-        align-self: center;
-        margin-right: 2px;
-      }
-
-      div:nth-child(3) {
-        flex-grow: 0.1;
-        align-self: center;
+        display: none;
       }
 
       p {
@@ -245,18 +243,19 @@ export const Homestyle = {
     }
 
     @media only screen and (max-width: 600px) {
+      padding-top: 5%;
       .top {
-        text-align: center;
-        display: inline;
-      }
+        padding: 5% 0%;
 
-      h2 {
-        width: 100%;
-        margin: auto;
-        display: inline;
-        font-size: 108.8%;
-        position: relative;
-        left: 5%;
+        text-align: center;
+        h2 {
+          width: 92%;
+          margin: auto;
+          font-size: 108.8%;
+        }
+        p {
+          width: 58%;
+        }
       }
 
       border-top: 2px soild #aeb2b8;
@@ -440,18 +439,18 @@ export const Homestyle = {
 
     @media only screen and (max-width: 600px) {
       .grid {
-        width: 80%;
+        // width: 80%;
         margin: auto;
-        display: grid;
-        grid-template-columns: auto;
+        display: flex;
+        flex-direction: column;
       }
 
       p {
         margin: 3%;
       }
 
-      h3{
-        margin-bottom:5%;
+      h3 {
+        margin-bottom: 5%;
       }
 
       .icon {
@@ -489,12 +488,14 @@ export const Mid = styled.div`
     flex-direction: column;
 
     h2 {
-      width: 90%;
-      font-size: 30px;
+      width: 96%;
+      text-align: center;
+      font-size: 28px;
     }
 
     .tick-grid {
-      width: 90%;
+      width: 86%;
+      margin: auto;
       font-size: 18px;
       font-weight: 520;
     }

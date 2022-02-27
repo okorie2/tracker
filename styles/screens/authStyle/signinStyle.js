@@ -16,7 +16,7 @@ export const SigninContainer = styled(SignupContainer)`
   .right {
     .rw {
       div:nth-child(2) {
-        flex-basis: 54%;
+        flex-basis: 63%;
         // background-color: pink;
       }
     }

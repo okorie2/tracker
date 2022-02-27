@@ -79,7 +79,7 @@ export const Homestyle = {
     grid-template-columns: 60% 40%;
     // display: flex;
 
-    width: 90%;
+    width: 83%;
     margin: auto;
     margin-top: 5%;
     // background-color: pink;
@@ -326,19 +326,19 @@ export const Homestyle = {
       flex-direction: column;
 
       .text {
-        display: grid;
+        display: block;
         width: inherit;
-        grid-template-columns: 50% 50%;
         // flex-grow: 0.5;
         h2 {
-          font-size: 30px;
+          font-size: 25px;
           position: relative;
           left: -2%;
         }
         p {
-          width: 80%;
-          margin-left: 13%;
+          width: 85%;
           font-weight: normal;
+          position: relative;
+          left: -2%;
         }
       }
 
@@ -356,32 +356,39 @@ export const Homestyle = {
           border-radius: 10px;
           width: ${(props) => (props.width ? props.width : "100%")};
           padding: 3.5%;
-          font-weight: 550;
-          font-size: 18px;
+          font-weight: 470px;
+          font-size: 16px;
+        }
+      }
+
+      .flex {
+        display: block;
+        input {
+          padding: 3.5%;
         }
       }
     }
 
     @media only screen and (min-width: 600px) {
       @media only screen and (max-width: 990px) {
+        display: block;
         .text {
-          display: grid;
-          width: 50%;
-          grid-template-columns: 30% 50%;
+          display: block;
+          width: 100%;
           // flex-grow: 0.5;
           h2 {
-            font-size: 25px;
+            font-size: 28px;
             position: relative;
-            left: -2%;
+            margin-top: -3%;
           }
           p {
             width: 70%;
-            margin-left: 29%;
             font-weight: 200px;
           }
         }
 
         .form {
+          width: 100%;
           // flex-grow: 0.5;
           div {
             margin-bottom: 2.5%;
@@ -394,6 +401,18 @@ export const Homestyle = {
             padding: 3.5%;
             font-weight: 550;
             font-size: 18px;
+          }
+        }
+
+        .flex {
+          div:nth-child(1) {
+            flex-grow: 0.5;
+          }
+          div:nth-child(2) {
+            flex-grow: 0.6;
+          }
+          input {
+            padding: 5.5%;
           }
         }
       }
@@ -420,20 +439,25 @@ export const Homestyle = {
     }
 
     @media only screen and (max-width: 600px) {
-      div:nth-child(4) {
-        align-self: center;
-        position: relative;
-        margin: ;
-      }
       .grid {
         width: 80%;
         margin: auto;
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto;
       }
 
       p {
-        margin: 10%;
+        margin: 3%;
+      }
+
+      h3{
+        margin-bottom:5%;
+      }
+
+      .icon {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
       }
     }
   `,

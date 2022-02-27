@@ -16,7 +16,7 @@ export default function ArrowLeft() {
           cy="36.5"
           r="35.5"
           stroke="#8574EB"
-          stroke-width="2"
+          strokeWidth="2"
           className="arr-circle"
           fill="none"
         />

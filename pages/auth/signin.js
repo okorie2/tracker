@@ -51,7 +51,7 @@ export default function signup() {
         <div className="right">
           <div className="form-container">
             <h1>SIGN IN</h1>
-            <p>Welcome back! You've been missed.</p>
+            <p>Welcome back! You&apos;ve been missed.</p>
             {/* <div>
               <Inp
                 type="text"

@@ -18,7 +18,7 @@ export default function ArrowRight() {
           cy="36.5"
           r="35.5"
           stroke="#8574EB"
-          stroke-width="2"
+          strokeWidth="2"
           fill="none"
         />
         {/* </g> */}

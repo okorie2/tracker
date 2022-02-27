@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function index() {
+export default function Tracker() {
   const [count, setCount] = useState(0);
   const [int, setInt] = useState(0);
   const startCounter = () => {

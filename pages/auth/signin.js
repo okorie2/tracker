@@ -89,7 +89,7 @@ export default function signup() {
                   <ButtonHighlight> Sign In</ButtonHighlight>
                 </div>
                 <div>
-                  <h4>Don't have an account? </h4>{" "}
+                  <h4>Don&apos;t have an account? </h4>{" "}
                   <span>
                     <Link href={"/auth/signup"}>
                       <a> Sign Up </a>

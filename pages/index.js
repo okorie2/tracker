@@ -8,6 +8,8 @@ import { UseTheme } from "../hooks/useTheme";
 import Three from "../public/assets/svgs/threedtots.svg";
 import Logo from "../public/assets/svgs/logo.svg";
 import YtLogo from "../public/assets/svgs/tracker.svg";
+import YtTrack from "../public/assets/svgs/trackerW.svg";
+
 import Fb from "../public/assets/svgs/fb.svg";
 import Github from "../public/assets/svgs/github.svg";
 import Twitter from "../public/assets/svgs/twitter.svg";
@@ -31,7 +33,7 @@ import { Homestyle, Mid } from "../styles/screens/homestyle";
 import Carousel, { CarouselItem } from "../components/Carousel/Carousel";
 import { CardStyle } from "../styles/components/Cards/SmCardStyle";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   if (typeof window !== "undefined") {
@@ -45,6 +47,19 @@ export default function Home() {
   const toggleMenu = () => {
     setMenu(!menu);
   };
+
+  const [width, setWidth] = useState(null);
+  const [mobileView, setMobileView] = useState(null);
+  useEffect(() => {
+    setMobileView(window.matchMedia("(max-width:900px)"));
+    if (mobileView && mobileView.matches) {
+      setWidth(100);
+    } else {
+      setWidth(40.3);
+    }
+  }, [mobileView]);
+  console.log(width, "width");
+
   return (
     <>
       <>
@@ -84,7 +99,7 @@ export default function Home() {
               <div className="item">Terms</div>
               <div className="item">Features</div>
               <div className="item">Contact us</div>
-              <div className="item">
+              <div className="item btn">
                 {" "}
                 <Link href="/auth/signin">
                   <a>
@@ -199,7 +214,7 @@ export default function Home() {
             </p>
           </div>
 
-          <Carousel>
+          <Carousel width={width}>
             <CarouselItem>
               <CardStyle>
                 <div className="flex">
@@ -314,7 +329,7 @@ export default function Home() {
 
         <Homestyle.Footer>
           <div>
-            <Image src={YtLogo} alt="YtLogo" />
+            <Image src={YtTrack} alt="YtLogo" />
           </div>
 
           <div className="grid">

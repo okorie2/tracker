@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Back from "../../public/assets/svgs/back.svg";
 import Forward from "../../public/assets/svgs/foward.svg";
 
@@ -18,7 +18,7 @@ export const CarouselItem = ({ children, width }) => {
   );
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children, width }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -33,10 +33,14 @@ const Carousel = ({ children }) => {
     <CarouselStyle>
       <div
         className="inner"
-        style={{ transform: ` translateX(-${activeIndex * 40.3}%)` }}
+        style={{
+          transform: ` translateX(-${activeIndex * (width ? width : 40.3)}%)`,
+        }}
       >
         {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, { width: "40.3%" });
+          return React.cloneElement(child, {
+            width: `${width ? width : 40.3}%`,
+          });
         })}
       </div>
 

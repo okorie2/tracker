@@ -129,7 +129,7 @@ export default function Home() {
             </Link>
           </div>
           <div>
-            <Image src={Marni} alt={"Marni"} width={488} />
+            <Image src={Marni} alt={"Marni"} width={488} priority />
           </div>
         </Homestyle.Intro>
         <Homestyle.Stat>
@@ -167,7 +167,7 @@ export default function Home() {
         </Homestyle.Stat>
         <Mid>
           <div>
-            <Image src={Man} alt={"Man"} width={528} />
+            <Image src={Man} alt={"Man"} width={528} priority />
           </div>
           <div>
             <h2>We provide many features you can use</h2>

@@ -46,7 +46,7 @@ export default function signup() {
       <SigninContainer>
         <div className="left">
           {/* <div>hey</div> */}
-          <Image src={Marni} alt="Marni" width={638} />
+          <Image src={Marni} alt="Marni" width={638} priority />
         </div>
         <div className="right">
           <div className="form-container">

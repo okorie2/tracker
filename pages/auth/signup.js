@@ -46,7 +46,7 @@ export default function signup() {
       <SignupContainer>
         <div className="left">
           {/* <div>hey</div> */}
-          <Image src={Ikbal} alt="Ikbal" width={638} />
+          <Image src={Ikbal} alt="Ikbal" width={638} priority />
         </div>
         <div className="right">
           <div className="form-container">

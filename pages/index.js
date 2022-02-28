@@ -50,36 +50,19 @@ export default function Home() {
 
   const [width, setWidth] = useState(null);
   const [mobileView, setMobileView] = useState(null);
-  useEffect(() => {
-    setMobileView(window.matchMedia("(max-width:900px)"));
-    if (mobileView && mobileView.matches) {
-      setWidth(100);
-    } else {
-      setWidth(40.3);
-    }
-  }, [mobileView]);
+  // useEffect(() => {
+  //   setMobileView(window.matchMedia("(max-width:900px)"));
+  //   if (mobileView && mobileView.matches) {
+  //     setWidth(100);
+  //   } else {
+  //     setWidth(40.3);
+  //   }
+  // }, [mobileView]);
   console.log(width, "width");
 
   return (
     <>
       <>
-        <Head>
-          <title>Track-er</title>
-          <meta name="description" content="Track your daily activities" />
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,300;1,400&display=swap"
-            rel="stylesheet"
-          />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
         <Homestyle.Topnav>
           <div className="img">
             <Image src={Three} alt={"threedots"} width={70} />

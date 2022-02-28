@@ -17,32 +17,6 @@ import Link from "next/link";
 export default function signup() {
   return (
     <>
-      <Head>
-        <title>Track-er</title>
-        <meta name="description" content="Track your daily activities" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,300;1,400&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
       <SignupContainer>
         <div className="left">
           {/* <div>hey</div> */}

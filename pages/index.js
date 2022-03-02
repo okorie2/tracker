@@ -41,30 +41,33 @@ export default function Home() {
   }
 
   const { themeLoaded, themeMode, toggleTheme, theme } = UseTheme();
-  console.log(themeMode, "current theme");
+  // console.log(themeMode, "current theme");
 
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => {
     setMenu(!menu);
   };
 
-  const [width, setWidth] = useState(null);
   const [mobileView, setMobileView] = useState(null);
+  const [width, setWidth] = useState(10);
+  const [resize, setResize] = useState(false);
+
+  const handleResize = () => {
+    setMobileView(window.matchMedia("(max-width:900px)"));
+    if (mobileView && mobileView.matches) {
+      setWidth(100);
+    } else {
+      setWidth(40.3);
+    }
+  };
 
   useEffect(() => {
-    if (mobileView === null) {
-      setMobileView(window.matchMedia("(max-width:900px)"));
+    window.addEventListener("resize", () => setResize(!resize));
 
-      if (mobileView && mobileView.matches) {
-        setWidth(100);
-      } else {
-        setWidth(40.3);
-      }
-    }
-  }, [mobileView]);
+    handleResize();
+  }, [resize]);
 
-  console.log(mobileView, "width");
-
+  console.log(mobileView, width);
   return (
     <>
       <>

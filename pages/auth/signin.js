@@ -17,6 +17,18 @@ import { SigninContainer } from "../../styles/screens/authStyle/signinStyle";
 export default function signup() {
   return (
     <>
+      <Head>
+        <title>Track-er</title>
+        <meta name="description" content="Track your daily activities" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+      </Head>
+
       <SigninContainer>
         <div className="left">
           {/* <div>hey</div> */}

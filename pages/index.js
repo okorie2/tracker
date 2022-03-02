@@ -41,28 +41,46 @@ export default function Home() {
   }
 
   const { themeLoaded, themeMode, toggleTheme, theme } = UseTheme();
-  console.log(themeMode, "current theme");
+  // console.log(themeMode, "current theme");
 
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => {
     setMenu(!menu);
   };
 
-  const [width, setWidth] = useState(null);
   const [mobileView, setMobileView] = useState(null);
-  // useEffect(() => {
-  //   setMobileView(window.matchMedia("(max-width:900px)"));
-  //   if (mobileView && mobileView.matches) {
-  //     setWidth(100);
-  //   } else {
-  //     setWidth(40.3);
-  //   }
-  // }, [mobileView]);
-  console.log(width, "width");
+  const [width, setWidth] = useState(10);
+  const [resize, setResize] = useState(false);
 
+  const handleResize = () => {
+    setMobileView(window.matchMedia("(max-width:900px)"));
+    if (mobileView && mobileView.matches) {
+      setWidth(100);
+    } else {
+      setWidth(40.3);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setResize(!resize));
+
+    handleResize();
+  }, [resize]);
+
+  console.log(mobileView, width);
   return (
     <>
       <>
+        <Head>
+          <title>Track-er</title>
+          <meta name="description" content="Track your daily activities" />
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        </Head>
         <Homestyle.Topnav>
           <div className="img">
             <Image src={Three} alt={"threedots"} width={70} />

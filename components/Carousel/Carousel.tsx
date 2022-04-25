@@ -1,7 +1,4 @@
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import Back from "../../public/assets/svgs/back.svg";
-import Forward from "../../public/assets/svgs/foward.svg";
+import React, { useState } from "react";
 
 import {
   CarouselItemStyle,
@@ -10,7 +7,12 @@ import {
 import ArrowLeft from "../Tools/ArrowLeft";
 import ArrowRight from "../Tools/ArrowRight";
 
-export const CarouselItem = ({ children, width }) => {
+interface Props{
+width?: string | number,
+children?: JSX.Element
+}
+
+export const CarouselItem = ({ children, width }:Props) => {
   return (
     <CarouselItemStyle width={width}>
       <div>{children}</div>
@@ -18,7 +20,7 @@ export const CarouselItem = ({ children, width }) => {
   );
 };
 
-const Carousel = ({ children, width }) => {
+const Carousel = ({ children, width }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -34,10 +36,10 @@ const Carousel = ({ children, width }) => {
       <div
         className="inner"
         style={{
-          transform: ` translateX(-${activeIndex * (width ? width : 40.3)}%)`,
+          transform: ` translateX(-${activeIndex * Number (width ? width : 40.3)}%)`,
         }}
       >
-        {React.Children.map(children, (child, index) => {
+        {React.Children.map(children, (child) => {
           return React.cloneElement(child, {
             width: `${width ? width : 40.3}%`,
           });
@@ -52,7 +54,6 @@ const Carousel = ({ children, width }) => {
           }}
         >
           <ArrowLeft />
-          {/* <Image src={Back} alt="back" width={63} /> */}
         </div>
 
         <div
@@ -63,7 +64,6 @@ const Carousel = ({ children, width }) => {
         >
           <ArrowRight />
 
-          {/* <Image src={Forward} alt="forward" width={73} /> */}
         </div>
       </div>
     </CarouselStyle>

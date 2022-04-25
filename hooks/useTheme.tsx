@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export const UseTheme = () => {
   const [theme, setTheme] = useState({});
   const [themeLoaded, setThemeLoaded] = useState(false);
-  const [themeMode, setThemeMode] = useState(true);
+  const [themeMode, setThemeMode] = useState<boolean>(true);
 
   useEffect(() => {
     if (themeMode) {

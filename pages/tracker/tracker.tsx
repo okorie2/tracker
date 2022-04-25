@@ -6,7 +6,7 @@ export default function Tracker() {
   const startCounter = () => {
     //clicking  twice on the button that calls this function breaks things.
     setInt(
-      setInterval(() => {
+      setInterval((): void => {
         setCount((count += 1));
         // return count;
       }, 1000)
